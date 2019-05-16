@@ -9,5 +9,5 @@
         "start": "node index.js"
     },
     
-    "engines":{"node" ">8.0.0"}
+   
 }
