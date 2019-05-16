@@ -17,31 +17,21 @@ pipeline {
       }
     }
      
-    stage('Test') {
+    stage('Deploy') {
       steps {
          sh 'npm test'
-      }
-      
-      
-      stage('Deploy') {
-
-      steps {
-
- 
-
-      echo "I am in deploy"
+        echo "I am in deploy"
 
       azureWebAppPublish azureCredentialsId: "alejandrSPJenkins",
 
       resourceGroup: "alanguloNodeJs", appName: "AlanguloNodeJS", filePath: "**/myAppFiles.zip"
 
       cleanWs()
-
       }
-      }
-
-        
-        
     }      
   }
 }
+
+
+
+
